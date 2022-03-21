@@ -1,64 +1,53 @@
+package main;
+
 public class BinaryTree<T> implements BinaryTreeInterface<T>
 {
    private BinaryNode<T> root;
 
-   public BinaryTree()
-   {
+   public BinaryTree() {
       root = null;
    } // end default constructor
 
-   public BinaryTree(T rootData)
-   {
+   public BinaryTree(T rootData) {
       root = new BinaryNode<>(rootData);
    } // end constructor
 
-   public BinaryTree(T rootData, BinaryTree<T> leftTree, BinaryTree<T> rightTree)
-   {
+   public BinaryTree(T rootData, BinaryTree<T> leftTree, BinaryTree<T> rightTree) {
       initializeTree(rootData, leftTree, rightTree);
    } // end constructor
 
-   public void setTree(T rootData, BinaryTreeInterface<T> leftTree,
-                                   BinaryTreeInterface<T> rightTree)
-   {
-      initializeTree(rootData, (BinaryTree<T>)leftTree,
-                               (BinaryTree<T>)rightTree);
+   public void setTree(T rootData, BinaryTreeInterface<T> leftTree, BinaryTreeInterface<T> rightTree) {
+      initializeTree(rootData, (BinaryTree<T>)leftTree,(BinaryTree<T>)rightTree);
    } // end setTree
 
-   public void setRootData(T rootData)
-   {
+   public void setRootData(T rootData) {
       root.setData(rootData);
    } // end setRootData
    
-   public T getRootData()
-   {
+   public T getRootData() {
       if (isEmpty())
          throw new EmptyTreeException();
       else
          return root.getData();
    } // end getRootData
    
-   public boolean isEmpty()
-   {
+   public boolean isEmpty() {
       return root == null;
    } // end isEmpty
    
-   public void clear()
-   {
+   public void clear() {
       root = null;
    } // end clear
    
-   protected void setRootNode(BinaryNode<T> rootNode)
-   {
+   protected void setRootNode(BinaryNode<T> rootNode) {
       root = rootNode;
    } // end setRootNode
    
-   protected BinaryNode<T> getRootNode()
-   {
+   protected BinaryNode<T> getRootNode() {
       return root;
    } // end getRootNode
    
-   private void initializeTree(T rootData, BinaryTree<T> leftTree, BinaryTree<T> rightTree)
-   {
+   private void initializeTree(T rootData, BinaryTree<T> leftTree, BinaryTree<T> rightTree) {
       root = new BinaryNode<>(rootData);
       
       if ((leftTree != null) && !leftTree.isEmpty())
@@ -90,20 +79,30 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    
    /** calls postorderTraverse(BinaryNode<T> node)
     * prints (using post-order traversal) all nodes in the "whole" tree */
-   public void postorderTraverse()
-   {
+   public void postorderTraverse() {
+      postorderTraverse(root);
    }
    
    /** A Recursive Method in the BinaryTree Class   
     * prints (using post-order traversal) all nodes in the subtree rooted at this node.*/
-   private void postorderTraverse(BinaryNode<T> node)
-   {
+   private void postorderTraverse(BinaryNode<T> node) {
+      if (node != null){
+         if (node.hasLeftChild()) {
+            postorderTraverse(node.getLeftChild());
+         }
+         if (node.hasRightChild()) {
+            postorderTraverse(node.getRightChild());
+         }
+         System.out.println(node.getData());
+      }
    }
  
    /** The following calls postorderTraverse_binaryNodeMethod(), which is a recursive binaryNode class method   
     * prints (using post-order traversal) all nodes in the "whole" tree */
-   public void postorderTraverse_callBinaryNodeMethod()
-   {
+   public void postorderTraverse_callBinaryNodeMethod() {
+      if ( root !=null){
+         root.postorderTraverse_binaryNodeMethod();
+    }
    }
    
    /** -------------------------------------------------------------------- */
@@ -115,29 +114,30 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    
    /** calls getHeight(BinaryNode<T> node)
    @return  The height of the "whole" tree */
-   public int getHeight()
-   {
+   public int getHeight() {
 	   return getHeight(root);
    } // end getHeight
    
    /** A Recursive Method in the BinaryTree Class  
     * Computes the height of the subtree rooted at this node.
-   @return  The height of the subtree rooted at this node. */
-   private int getHeight(BinaryNode<T> node)
-   {
+   @return  The height of the subtree rooted at this node. 
+   */
+   private int getHeight(BinaryNode<T> node) {
       int height = 0;
       if (node != null)
-         height = 1 + Math.max(getHeight(node.getLeftChild()),
-                               getHeight(node.getRightChild()));
+         height = 1 + Math.max(getHeight(node.getLeftChild()), getHeight(node.getRightChild()));
       return height;
    } // end getHeight
    
    /** The following calls getHeight_binaryNodeMethod() which is a recursive binaryNode class method
     * Computes the height of the "whole" tree.
    @return  The height of the "whole" tree. */
-   public int getHeight_callBinaryNodeMethod()
-   {
-	   return 0;
+   public int getHeight_callBinaryNodeMethod() {
+      if (root != null){
+	      return root.getHeight_binaryNodeMethod();
+      } else {
+         return 0;
+      }
    } // end getHeight_callBinaryNodeMethod
 
    /** -------------------------------------------------------------------- */
