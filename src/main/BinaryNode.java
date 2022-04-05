@@ -141,8 +141,6 @@ class BinaryNode<T>
       }
    }
 
-
-
    /** -------------------------------------------------------------------- */
    /** A Recursive Method in the BinaryNode Class  
     * Counts the nodes in the subtree rooted at "this" node.
