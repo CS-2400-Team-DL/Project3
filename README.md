@@ -9,4 +9,4 @@ Dean Mah:
     Task 3
 
 [JavaDoc](docs/index.html)
-[VideoLink] ()
+[VideoLink]()
