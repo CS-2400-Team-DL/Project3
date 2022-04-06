@@ -80,33 +80,31 @@ public class DriverBT
 	public static void createTree2(BinaryTree<String> tree)
 	{ 
 		// Leaves
-		BinaryTree<String> tree5 = new BinaryTree<>("E");
+		BinaryTree<String> tree6 = new BinaryTree<>("F");
+		BinaryTree<String> tree7 = new BinaryTree<>("G");
 		BinaryTree<String> tree8 = new BinaryTree<>("H");
-		BinaryTree<String> tree9 = new BinaryTree<>("I");
-		BinaryTree<String> tree10 = new BinaryTree<>("J");
-		BinaryTree<String> tree11 = new BinaryTree<>("K");
 
-		// Subtrees:
-		BinaryTree<String> tree4 = new BinaryTree<>("D", tree8, tree9);
-		BinaryTree<String> tree6 = new BinaryTree<>("F", tree10, null);
-		BinaryTree<String> tree7 = new BinaryTree<>("G", null, tree11);
-		
-		// Subtree lvl 2
-		BinaryTree<String> tree2 = new BinaryTree<>("B", tree4, tree5);
-		BinaryTree<String> tree3 = new BinaryTree<>("C", tree6, tree7);
+		// Level 3
+		BinaryTree<String> tree4 = new BinaryTree<>("D", tree6, null);
+		BinaryTree<String> tree5 = new BinaryTree<>("E", tree7, tree8);
+
+		//Level 2
+		BinaryTree<String> tree2 = new BinaryTree<>("B");
+		BinaryTree<String> tree3 = new BinaryTree<>("C", tree4, tree5);
 
 		// Root Node
 		tree.setTree("A", tree2, tree3);
 		
 		System.out.print(
-		"\nGiven Tree:\n" +
-		"            A                 \n"+
-		"          /   \\                \n"+
-		"        B       C              \n"+
-		"      /  \\     / \\           \n"+
-		"    D     E   F    G         \n"+
-		"  /   \\     /       \\      \n"+
-		" H     I   J         K    \n");
+		"\nGiven Tree:    \n" +
+		"            A    \n"+
+		"          /   \\ \n"+
+		"         B     C           \n"+
+		"             /   \\        \n"+
+		"            D      E       \n"+
+		"         /       /   \\    \n"+
+		"        F      G       H   \n"+
+		"\n");
 
 	} // end createTree2
 
