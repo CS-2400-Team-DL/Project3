@@ -10,3 +10,4 @@ Dean Mah:
 
 [JavaDoc](docs/index.html)
 [VideoLink]()
+[GitHub](https://github.com/CS-2400-Team-DL/Project3)
