@@ -6,7 +6,7 @@ Leonardo Davalos:
     Task 1,2,4
 Dean Mah:
 
-    Task 3
+    Task 3, video editing
 
 [JavaDoc](docs/index.html)
 [VideoLink]()

@@ -156,7 +156,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    
    /** A Recursive Method in the BinaryTree Class   
     * Counts the nodes in the subtree rooted at this node.
-   @return  The number of nodes in the subtree rooted at this node. */
+   @return  The number of nodes in the subtree rooted at this node. Returns 1 if the node is null or if the tree contains 1 node. */
    private int getNumberOfNodes(BinaryNode<T> node)
    {
       int leftNodes = 0;

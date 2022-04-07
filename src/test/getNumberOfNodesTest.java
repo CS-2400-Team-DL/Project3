@@ -12,6 +12,7 @@ class getNumberOfNodesTest {
 
 	private BinaryTree<String> tree0 = new BinaryTree<>();
 	private BinaryTree<String> tree01 = new BinaryTree<>();
+	private BinaryTree<String> tree02 = new BinaryTree<>();
 
 	@BeforeEach
 	public void init() {
@@ -28,6 +29,8 @@ class getNumberOfNodesTest {
 		BinaryTree<String> tree21 = new BinaryTree<>("C");
 		
 		tree01 = new BinaryTree<>("A", tree11, tree21);
+
+      tree02 = new BinaryTree<>("A", null, null);
 		
 	}
 	
@@ -46,4 +49,9 @@ class getNumberOfNodesTest {
 	public void simple4HeightNumOfNodesTest() {
 		assertEquals(6, tree0.getNumberOfNodes());
 	}
+
+   @Test
+   public void simple1HeightNumOfNodesTest() {
+      assertEquals(1, tree02.getNumberOfNodes());
+   }
 }
