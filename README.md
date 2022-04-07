@@ -9,4 +9,4 @@ Dean Mah:
     Task 3, video editing
 
 [JavaDoc](docs/index.html)
-[VideoLink]()
+[VideoLink](https://youtu.be/GbZXtCIy6x0)
