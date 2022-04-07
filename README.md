@@ -8,6 +8,6 @@ Dean Mah:
 
     Task 3, video editing
 
-[JavaDoc](docs/index.html)
+[JavaDoc](doc/index.html)
 [VideoLink]()
 [GitHub](https://github.com/CS-2400-Team-DL/Project3)
