@@ -161,23 +161,16 @@ public class BinaryTree<T> implements BinaryTreeInterface<T>
    {
       int leftNodes = 0;
       int rightNodes = 0;
-      if (node != null) 
+
+      if (node.hasLeftChild())
       {
-         if (node.hasLeftChild())
-         {
-            leftNodes ++;
-            getNumberOfNodes(node.getLeftChild());
-         }
-         if (node.hasRightChild())
-         {
-            rightNodes ++;
-            getNumberOfNodes(node.getRightChild());
-         }
-         return 1 + leftNodes + rightNodes;
-      } else
-      {
-      return 0;
+         leftNodes = getNumberOfNodes(node.getLeftChild());
       }
+      if (node.hasRightChild())
+      {
+         rightNodes = getNumberOfNodes(node.getRightChild());
+      }
+      return 1 + leftNodes + rightNodes;
    } // end getNumberOfNodes
    
    /** The following calls getNumberOfNodes_binaryNodeMethod() which is a recursive binaryNode class method
